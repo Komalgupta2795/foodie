@@ -16,6 +16,10 @@ body
     align-items: center;
     padding: 30px 0;
 }
+/* .logo {
+    grid-column: 1;
+  } */
+  
 .nav .logo h1{
     font-weight: 600;
     font-family: sans-serif;
@@ -28,6 +32,7 @@ body
 {
     display: flex;
     list-style: none;
+    flex-wrap: wrap;
 }
 .nav ul li{
     margin-right: 30px;
@@ -55,6 +60,13 @@ input
     cursor: pointer;
     font-weight: 600;
 }
+/* .signin,
+.signup {
+  grid-column: 1;
+  margin-top: 20px;
+} */
+
+
 .signin
 {
     background: transparent;
@@ -70,7 +82,7 @@ input
 }
 .content
 {
-    display: grid;
+    /* display: grid; */
     grid-template-columns: 50% auto;
     gap: 30px;
     margin-top: 120px;
@@ -229,12 +241,21 @@ input
     body {
         margin: 0 20px;
     }
-
+.nav
+     {
+        grid-template-columns: 1fr;
+        font-size: larger;
+        display: grid;
+     }
     .nav ul{
         flex-direction: column;
         gap: 10px;
         /* grid-template-columns: 1fr; */
         /* grid-template-columns: repeat(2, 1fr); */
+    }
+    .nav ul .active::after{
+        height: 3px;
+        width: 10%;
     }
 
     .content {
@@ -268,6 +289,23 @@ input
 
 /* For devices with a width less than 480px */
 @media (max-width: 480px) {
+    .nav .logo
+     {
+        grid-template-columns:1fr;
+        font-size: larger;
+         margin: 0px 0px 0px 0px;
+     }
+     .nav ul
+     {
+        grid-template-columns: 1fr;
+        /* font-size: larger; */
+        display: grid;
+     }
+     .nav input 
+     {
+        grid-template-columns: 1fr;
+        /* font-size: larger; */
+     }
     .content .content-left .info h2 {
         font-size: 30px;
     }
